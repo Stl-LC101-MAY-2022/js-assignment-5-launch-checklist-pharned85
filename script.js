@@ -10,11 +10,15 @@ window.addEventListener("load", function() {
     const copilot = document.querySelector("input[name=copilot]");
     const fuelLevel = document.querySelector("input[name=fuelLevel]");
     const mass = document.querySelector("input[name=mass]");
+    const list = document.getElementById("faultyItems"); 
 
-// read or not ready w/validation
+    list.style.visibility = "hidden";   
 
-<script>
-   window.addEventListener("load", function() {
+// read or not ready w/validation VVVVVVV
+
+let form = document.querySelector("form"); 
+    form.addEventListener("submit", function(event) { 
+   
       let form = document.querySelector("form");
       form.addEventListener("submit", function(event) {
          let usernameInput = document.querySelector("input[name=username]");
