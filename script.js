@@ -4,7 +4,12 @@
 
 
 // entered text for the pilot's name, the co-pilot's name, the fuel levels, and the mass of the cargo.
-
+window.addEventListener("load", function() {
+    const document = window.document
+    const pilot = document.querySelector("input[name=pilotName]");
+    const copilot = document.querySelector("input[name=copilot]");
+    const fuelLevel = document.querySelector("input[name=fuelLevel]");
+    const mass = document.querySelector("input[name=mass]");
 
 // read or not ready w/validation
 
