@@ -16,9 +16,7 @@ window.addEventListener("load", function() {
 
 // read or not ready w/validation VVVVVVV
 
-let form = document.querySelector("form"); 
-    form.addEventListener("submit", function(event) { 
-   
+  
       let form = document.querySelector("form");
       form.addEventListener("submit", function(event) {
          let usernameInput = document.querySelector("input[name=username]");
@@ -30,7 +28,33 @@ let form = document.querySelector("form");
          }
       });
    });
-</script>
+
+
+
+
+   let form = document.querySelector("form"); 
+    form.addEventListener("submit", function(event) { 
+        
+        formSubmission(document, list, pilot.value, copilot.value, fuelLevel.value, mass.value);
+        
+        if (validateInput(pilot.value) == "Empty" || validateInput(copilot.value) == "Empty" || validateInput(fuelLevel.value) == "Empty" || validateInput(mass.value) == "Empty") {
+            list.style.visibility = "hidden"; 
+            alert("All fields are required!");
+            event.preventDefault();
+        } 
+        if (validateInput(pilot.value) == "Is a Number" || validateInput(copilot.value) == "Is a Number") {
+            list.style.visibility = "hidden"; 
+            alert("Pilot and CoPilot's names should be letters only.");
+            event.preventDefault();
+        }
+
+        if (validateInput(fuelLevel.value) == "Not a Number" || validateInput(mass.value) == "Not a Number") {
+            list.style.visibility = "hidden"; 
+            alert("Fuel Level and Cargo Mass should be numbers only.");
+            event.preventDefault();
+        }
+        event.preventDefault();
+    }) 
 
 
 // Indicate what is good or bad about the shuttle and whether it is ready for launch by using the DOM to update the CSS.
@@ -38,7 +62,7 @@ let form = document.querySelector("form");
 
 
 
-event.preventDefault();
+
 
 // below is planets list stuff
 
