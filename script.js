@@ -39,18 +39,18 @@ window.addEventListener("load", function() {
         
         if (validateInput(pilot.value) == "Empty" || validateInput(copilot.value) == "Empty" || validateInput(fuelLevel.value) == "Empty" || validateInput(mass.value) == "Empty") {
             list.style.visibility = "hidden"; 
-            alert("All fields are required!");
+            alert("Fill out every field, nerd!");
             event.preventDefault();
         } 
         if (validateInput(pilot.value) == "Is a Number" || validateInput(copilot.value) == "Is a Number") {
             list.style.visibility = "hidden"; 
-            alert("Pilot and CoPilot's names should be letters only.");
+            alert("Names are spelled with letters.");
             event.preventDefault();
         }
 
         if (validateInput(fuelLevel.value) == "Not a Number" || validateInput(mass.value) == "Not a Number") {
             list.style.visibility = "hidden"; 
-            alert("Fuel Level and Cargo Mass should be numbers only.");
+            alert("Fuel Level and Cargo Mass are numbers only.");
             event.preventDefault();
         }
         event.preventDefault();
