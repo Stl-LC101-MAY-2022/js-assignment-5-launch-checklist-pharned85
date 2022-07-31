@@ -28,12 +28,11 @@ function validateInput(testInput) {
 
 //just copypasta here to remind me to fix later
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-   let pilotStatus = document.getElementById("pilotStatus");
-   let pilotStatus = document.getElementById("pilotStatus");
-   let pilotStatus = document.getElementById("pilotStatus");
-   let pilotStatus = document.getElementById("pilotStatus");
-   let pilotStatus = document.getElementById("pilotStatus");
-   let pilotStatus = document.getElementById("pilotStatus");
+    let pilotStatus = document.getElementById("pilotStatus");
+    let copilotStatus = document.getElementById("copilotStatus");
+    let fuelStatus = document.getElementById("fuelStatus");
+    let massStatus = document.getElementById("massStatus"); 
+    let h2 = document.getElementById("launchStatus");
 }
 
 
