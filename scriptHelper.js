@@ -36,7 +36,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass) {
     let pilotStatus = document.getElementById("pilotStatus");
     let copilotStatus = document.getElementById("copilotStatus");
     let fuelStatus = document.getElementById("fuelStatus");
-    let cargoMassStatus = document.getElementById("cargoMassStatus"); 
+    let cargoStatus = document.getElementById("cargoStatus"); 
     let h2 = document.getElementById("launchStatus");
 }
 
@@ -52,7 +52,7 @@ if (cargoMass > 10000 && fuelLevel < 10000) {
     pilotStatus.innerHTML = 'Pilot ${pilot} is ready for launch';
     copilotStatus.innerHTML = 'Co-pilot ${copilot} is ready for launch';
     fuelStatus.innerHTML = "Fuel level too low for launch";
-    cargoMassStatus.innerHTML = "Cargo mass too heavy for launch";
+    cargoStatus.innerHTML = "Cargo mass too heavy for launch";
 
 
  // Fuel level too low but also cargo/mass is good
@@ -63,7 +63,7 @@ if (cargoMass > 10000 && fuelLevel < 10000) {
     fuelStatus.innerHTML = "Fuel level too low for launch";
     pilotStatus.innerHTML = 'Pilot ${pilot} is ready for launch';
     copilotStatus.innerHTML = 'Co-pilot ${copilot} is ready for launch';
-    cargoMassStatus.innerHTML = "Cargo mass low enough for launch";
+    cargoStatus.innerHTML = "Cargo mass low enough for launch";
 
 // Cargo/mass too heavy but fuel level is good
 } else if (cargoMass > 10000 && fuelLevel >= 10000) {
@@ -73,7 +73,7 @@ if (cargoMass > 10000 && fuelLevel < 10000) {
     pilotStatus.innerHTML = 'Pilot ${pilot} is ready for launch';
     copilotStatus.innerHTML = 'Co-pilot ${copilot} is ready for launch';
     fuelStatus.innerHTML = "Fuel level high enough for launch";
-    cargoMassStatus.innerHTML = "Cargo mass too heavy for launch";
+    cargoStatus.innerHTML = "Cargo mass too heavy for launch";
     
 // Shuttle ready for launch with enough fuel and cargo
 } else if (cargoMass <= 10000 && fuelLevel >= 10000) {
@@ -83,7 +83,7 @@ if (cargoMass > 10000 && fuelLevel < 10000) {
     pilotStatus.innerHTML = 'Pilot ${pilot} is ready for launch';
     copilotStatus.innerHTML = 'Co-pilot ${copilot} is ready for launch';
     fuelStatus.innerHTML = "Fuel level high enough for launch";
-    cargoMassStatus.innerHTML = "Cargo mass low enough for launch";
+    cargoStatus.innerHTML = "Cargo mass low enough for launch";
 } 
 
 
