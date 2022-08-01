@@ -9,7 +9,7 @@ window.addEventListener("load", function() {
     const pilot = document.querySelector("input[name=pilotName]");
     const copilot = document.querySelector("input[name=copilot]");
     const fuelLevel = document.querySelector("input[name=fuelLevel]");
-    const mass = document.querySelector("input[name=mass]");
+    const cargoMass = document.querySelector("input[name=cargoMass]");
     const list = document.getElementById("faultyItems"); 
 
     list.style.visibility = "hidden";   
@@ -20,9 +20,9 @@ window.addEventListener("load", function() {
    let form = document.querySelector("form"); 
     form.addEventListener("submit", function(event) { 
         
-        formSubmission(document, list, pilot.value, copilot.value, fuelLevel.value, mass.value);
+        formSubmission(document, list, pilot.value, copilot.value, fuelLevel.value, cargoMass.value);
         
-        if (validateInput(pilot.value) == "Empty" || validateInput(copilot.value) == "Empty" || validateInput(fuelLevel.value) == "Empty" || validateInput(mass.value) == "Empty") {
+        if (validateInput(pilot.value) == "Empty" || validateInput(copilot.value) == "Empty" || validateInput(fuelLevel.value) == "Empty" || validateInput(cargoMass.value) == "Empty") {
             list.style.visibility = "hidden"; 
             alert("Fill out every field, nerd!");
             event.preventDefault();
@@ -33,7 +33,7 @@ window.addEventListener("load", function() {
             event.preventDefault();
         }
 
-        if (validateInput(fuelLevel.value) == "Not a Number" || validateInput(mass.value) == "Not a Number") {
+        if (validateInput(fuelLevel.value) == "Not a Number" || validateInput(cargoMass.value) == "Not a Number") {
             list.style.visibility = "hidden"; 
             alert("Fuel Level and Cargo Mass are numbers only.");
             event.preventDefault();
