@@ -32,7 +32,7 @@ function validateInput(testInput) {
 
 
 // take/use info from checklist
-function formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass) {
+function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     let pilotStatus = document.getElementById("pilotStatus");
     let copilotStatus = document.getElementById("copilotStatus");
     let fuelStatus = document.getElementById("fuelStatus");
@@ -45,7 +45,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass) {
 
 
 // Cargo/mass too heavy and also not enough fuel
-if (cargoMass > 10000 && fuelLevel < 10000) {
+if (cargoLevel > 10000 && fuelLevel < 10000) {
     list.style.visibility= "visible";
     h2.style.color = "rgb(199, 37, 78)"; /*RED*/
     h2.innerHTML = "Shuttle Not Ready for Launch";       
@@ -56,7 +56,7 @@ if (cargoMass > 10000 && fuelLevel < 10000) {
 
 
  // Fuel level too low but also cargo/mass is good
-} else if (fuelLevel < 10000 && cargoMass <= 10000) {
+} else if (fuelLevel < 10000 && cargoLevel <= 10000) {
     list.style.visibility = "visible";
     h2.style.color = "rgb(199, 37, 78)"; /*RED*/
     h2.innerHTML = "Shuttle Not Ready for Launch";
@@ -66,7 +66,7 @@ if (cargoMass > 10000 && fuelLevel < 10000) {
     cargoStatus.innerHTML = "Cargo mass low enough for launch";
 
 // Cargo/mass too heavy but fuel level is good
-} else if (cargoMass > 10000 && fuelLevel >= 10000) {
+} else if (cargoLevel > 10000 && fuelLevel >= 10000) {
     list.style.visibility = "visible";
     h2.style.color = "rgb(199, 37, 78)"; /*RED*/
     h2.innerHTML = "Shuttle Not Ready for Launch";
@@ -76,7 +76,7 @@ if (cargoMass > 10000 && fuelLevel < 10000) {
     cargoStatus.innerHTML = "Cargo mass too heavy for launch";
     
 // Shuttle ready for launch with enough fuel and cargo
-} else if (cargoMass <= 10000 && fuelLevel >= 10000) {
+} else if (cargoLevel <= 10000 && fuelLevel >= 10000) {
     list.style.visibility = "visible";
     h2.style.color = "rgb(65, 159, 106)"; /*GREEN*/
     h2.innerHTML = "Shuttle is Ready for Launch";
