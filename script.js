@@ -3,13 +3,13 @@
 // make a form below
 
 
-// entered text for the pilot's name, the co-pilot's name, the fuel levels, and the mass of the cargo.
+// entered text for the pilot's name, the co-pilot's name, the fuel levels, and the level of the cargo.
 window.addEventListener("load", function() {
     const document = window.document
     const pilot = document.querySelector("input[name=pilotName]");
     const copilot = document.querySelector("input[name=copilot]");
     const fuelLevel = document.querySelector("input[name=fuelLevel]");
-    const cargoMass = document.querySelector("input[name=cargoMass]");
+    const cargoLevel = document.querySelector("input[name=cargoLevel]");
     const list = document.getElementById("faultyItems"); 
 
     list.style.visibility = "hidden";   
@@ -20,9 +20,9 @@ window.addEventListener("load", function() {
    let form = document.querySelector("form"); 
     form.addEventListener("submit", function(event) { 
         
-        formSubmission(document, list, pilot.value, copilot.value, fuelLevel.value, cargoMass.value);
+        formSubmission(document, list, pilot.value, copilot.value, fuelLevel.value, cargoLevel.value);
         
-        if (validateInput(pilot.value) == "Empty" || validateInput(copilot.value) == "Empty" || validateInput(fuelLevel.value) == "Empty" || validateInput(cargoMass.value) == "Empty") {
+        if (validateInput(pilot.value) == "Empty" || validateInput(copilot.value) == "Empty" || validateInput(fuelLevel.value) == "Empty" || validateInput(cargoLevel.value) == "Empty") {
             list.style.visibility = "hidden"; 
             alert("Fill out every field, nerd!");
             event.preventDefault();
@@ -33,7 +33,7 @@ window.addEventListener("load", function() {
             event.preventDefault();
         }
 
-        if (validateInput(fuelLevel.value) == "Not a Number" || validateInput(cargoMass.value) == "Not a Number") {
+        if (validateInput(fuelLevel.value) == "Not a Number" || validateInput(cargoLevel.value) == "Not a Number") {
             list.style.visibility = "hidden"; 
             alert("Fuel Level and Cargo Mass are numbers only.");
             event.preventDefault();
