@@ -3,26 +3,26 @@
 // make a form below
 
 
-// entered text for the pilot's name, the co-pilot's name, the fuel levels, and the level of the cargo.
+// entered text for the pilot's name, the co-pilot's name, the fuel levels, and the mass of the cargo.
 window.addEventListener("load", function() {
     const document = window.document
     const pilot = document.querySelector("input[name=pilotName]");
     const copilot = document.querySelector("input[name=copilot]");
     const fuelLevel = document.querySelector("input[name=fuelLevel]");
-    const cargoLevel = document.querySelector("input[name=cargoLevel]");
+    const cargoMass = document.querySelector("input[name=cargoMass]");
     const list = document.getElementById("faultyItems"); 
 
     list.style.visibility = "hidden";   
 
 // read or not ready w/validation VVVVVVV
-
+// Indicate what is good or bad about the shuttle and whether it is ready for launch by using the DOM to update the CSS.
   
    let form = document.querySelector("form"); 
     form.addEventListener("submit", function(event) { 
         
-        formSubmission(document, list, pilot.value, copilot.value, fuelLevel.value, cargoLevel.value);
+        formSubmission(document, list, pilot.value, copilot.value, fuelLevel.value, cargoMass.value);
         
-        if (validateInput(pilot.value) == "Empty" || validateInput(copilot.value) == "Empty" || validateInput(fuelLevel.value) == "Empty" || validateInput(cargoLevel.value) == "Empty") {
+        if (validateInput(pilot.value) == "Empty" || validateInput(copilot.value) == "Empty" || validateInput(fuelLevel.value) == "Empty" || validateInput(cargoMass.value) == "Empty") {
             list.style.visibility = "hidden"; 
             alert("Fill out every field, nerd!");
             event.preventDefault();
@@ -33,7 +33,7 @@ window.addEventListener("load", function() {
             event.preventDefault();
         }
 
-        if (validateInput(fuelLevel.value) == "Not a Number" || validateInput(cargoLevel.value) == "Not a Number") {
+        if (validateInput(fuelLevel.value) == "Not a Number" || validateInput(cargoMass.value) == "Not a Number") {
             list.style.visibility = "hidden"; 
             alert("Fuel Level and Cargo Mass are numbers only.");
             event.preventDefault();
@@ -42,16 +42,8 @@ window.addEventListener("load", function() {
     }) 
 
 
-// Indicate what is good or bad about the shuttle and whether it is ready for launch by using the DOM to update the CSS.
+
 // Fetch some planetary JSON to update the mission destination with vital facts and figures about where the shuttle is headed
-
-
-
-
-
-// below is planets list stuff
-
-window.addEventListener("load", function() {
 
    let listedPlanets;
    // Set listedPlanetsResponse equal to the value returned by calling myFetch()
@@ -69,5 +61,3 @@ window.addEventListener("load", function() {
         addDestinationInfo(window.document, pickedPlanet.name, pickedPlanet.diameter, pickedPlanet.star, pickedPlanet.distance, pickedPlanet.moons, pickedPlanet.image);
    
 })
-
-});

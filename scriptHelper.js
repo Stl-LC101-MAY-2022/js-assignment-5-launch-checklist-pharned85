@@ -30,60 +30,61 @@ function validateInput(testInput) {
     }
 }
 
+
+// take/use info from checklist
+function formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass) {
+    let pilotStatus = document.getElementById("pilotStatus");
+    let copilotStatus = document.getElementById("copilotStatus");
+    let fuelStatus = document.getElementById("fuelStatus");
+    let cargoMassStatus = document.getElementById("cargoMassStatus"); 
+    let h2 = document.getElementById("launchStatus");
+}
+
+
 //write CSS stuff here for colors and such for when the input/parameters are wrong
 
 
 // Cargo/mass too heavy and also not enough fuel
-if (cargoLevel > 10000 && fuelLevel < 10000) {
+if (cargoMass > 10000 && fuelLevel < 10000) {
     list.style.visibility= "visible";
     h2.style.color = "rgb(199, 37, 78)"; /*RED*/
     h2.innerHTML = "Shuttle Not Ready for Launch";       
     pilotStatus.innerHTML = 'Pilot ${pilot} is ready for launch';
     copilotStatus.innerHTML = 'Co-pilot ${copilot} is ready for launch';
     fuelStatus.innerHTML = "Fuel level too low for launch";
-    cargoLevelStatus.innerHTML = "Cargo mass too heavy for launch";
+    cargoMassStatus.innerHTML = "Cargo mass too heavy for launch";
 
 
  // Fuel level too low but also cargo/mass is good
-} else if (fuelLevel < 10000 && cargoLevel <= 10000) {
+} else if (fuelLevel < 10000 && cargoMass <= 10000) {
     list.style.visibility = "visible";
     h2.style.color = "rgb(199, 37, 78)"; /*RED*/
     h2.innerHTML = "Shuttle Not Ready for Launch";
     fuelStatus.innerHTML = "Fuel level too low for launch";
     pilotStatus.innerHTML = 'Pilot ${pilot} is ready for launch';
     copilotStatus.innerHTML = 'Co-pilot ${copilot} is ready for launch';
-    cargoLevelStatus.innerHTML = "Cargo mass low enough for launch";
+    cargoMassStatus.innerHTML = "Cargo mass low enough for launch";
 
 // Cargo/mass too heavy but fuel level is good
-} else if (cargoLevel > 10000 && fuelLevel >= 10000) {
+} else if (cargoMass > 10000 && fuelLevel >= 10000) {
     list.style.visibility = "visible";
     h2.style.color = "rgb(199, 37, 78)"; /*RED*/
     h2.innerHTML = "Shuttle Not Ready for Launch";
     pilotStatus.innerHTML = 'Pilot ${pilot} is ready for launch';
     copilotStatus.innerHTML = 'Co-pilot ${copilot} is ready for launch';
     fuelStatus.innerHTML = "Fuel level high enough for launch";
-    cargoLevelStatus.innerHTML = "Cargo mass too heavy for launch";
+    cargoMassStatus.innerHTML = "Cargo mass too heavy for launch";
     
 // Shuttle ready for launch with enough fuel and cargo
-} else if (cargoLevel <= 10000 && fuelLevel >= 10000) {
+} else if (cargoMass <= 10000 && fuelLevel >= 10000) {
     list.style.visibility = "visible";
     h2.style.color = "rgb(65, 159, 106)"; /*GREEN*/
     h2.innerHTML = "Shuttle is Ready for Launch";
     pilotStatus.innerHTML = 'Pilot ${pilot} is ready for launch';
     copilotStatus.innerHTML = 'Co-pilot ${copilot} is ready for launch';
     fuelStatus.innerHTML = "Fuel level high enough for launch";
-    cargoLevelStatus.innerHTML = "Cargo mass low enough for launch";
+    cargoMassStatus.innerHTML = "Cargo mass low enough for launch";
 } 
-
-
-// take/use info from checklist
-function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-    let pilotStatus = document.getElementById("pilotStatus");
-    let copilotStatus = document.getElementById("copilotStatus");
-    let fuelStatus = document.getElementById("fuelStatus");
-    let cargoLevelStatus = document.getElementById("cargoLevelStatus"); 
-    let h2 = document.getElementById("launchStatus");
-}
 
 
 // I think this is right, pulled planet list/entry method from previous assignment?
