@@ -1,5 +1,3 @@
-// Write your JavaScript code here!
-
 // make a form below
 
 
