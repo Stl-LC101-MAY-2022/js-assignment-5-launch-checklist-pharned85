@@ -1,5 +1,25 @@
 // make a form below
 
+window.addEventListener("load", function() {
+    let listedPlanets;
+    // Set listedPlanetsResponse equal to the value returned by calling myFetch()
+    let listedPlanetsResponse = myFetch();
+    
+    listedPlanetsResponse.then(function (result) {
+        listedPlanets = result;
+        console.log(listedPlanets);
+    }).then(function () {
+        console.log(listedPlanets);
+        // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
+    })
+    let pickedPlanet = pickPlanet(listedPlanets);
+ 
+         addDestinationInfo(window.document, pickedPlanet.name, pickedPlanet.diameter, pickedPlanet.star, pickedPlanet.distance, pickedPlanet.moons, pickedPlanet.image);
+    
+ })
+
+
+
 
 // entered text for the pilot's name, the co-pilot's name, the fuel levels, and the mass of the cargo.
 window.addEventListener("load", function() {
@@ -20,7 +40,7 @@ window.addEventListener("load", function() {
         
         formSubmission(document, list, pilot.value, copilot.value, fuelLevel.value, cargoLevel.value);
         
-        if (validateInput(pilot.value) == "Empty" || validateInput(copilot.value) == "Empty" || validateInput(fuelLevel.value) == "Empty" || validateInput(cargoLevel.value) == "Empty") {
+        if (validateInput(pilot.value) == "" || validateInput(copilot.value) == "" || validateInput(fuelLevel.value) == "" || validateInput(cargoLevel.value) == "") {
             list.style.visibility = "hidden"; 
             alert("Fill out every field, nerd!");
             event.preventDefault();
@@ -38,24 +58,7 @@ window.addEventListener("load", function() {
         }
         event.preventDefault();
     }) 
-
+})
 
 
 // Fetch some planetary JSON to update the mission destination with vital facts and figures about where the shuttle is headed
-
-   let listedPlanets;
-   // Set listedPlanetsResponse equal to the value returned by calling myFetch()
-   let listedPlanetsResponse = myFetch();
-   
-   listedPlanetsResponse.then(function (result) {
-       listedPlanets = result;
-       console.log(listedPlanets);
-   }).then(function () {
-       console.log(listedPlanets);
-       // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
-   })
-   let pickedPlanet = pickPlanet(listedPlanets);
-
-        addDestinationInfo(window.document, pickedPlanet.name, pickedPlanet.diameter, pickedPlanet.star, pickedPlanet.distance, pickedPlanet.moons, pickedPlanet.image);
-   
-})
