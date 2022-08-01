@@ -41,7 +41,6 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     let h2 = document.getElementById("launchStatus");
 }
 
-let form = document.querySelector("form"); 
     form.addEventListener("submit", function(event) { 
         formSubmission(document, list, pilot.value, copilot.value, fuelLevel.value, cargoLevel.value);
         
