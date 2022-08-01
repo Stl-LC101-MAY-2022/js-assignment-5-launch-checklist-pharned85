@@ -39,8 +39,8 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     let fuelStatus = document.getElementById("fuelStatus");
     let cargoStatus = document.getElementById("cargoStatus"); 
     let h2 = document.getElementById("launchStatus");
-}
 
+    let form = document.querySelector("form"); 
     form.addEventListener("submit", function(event) { 
         formSubmission(document, list, pilot.value, copilot.value, fuelLevel.value, cargoLevel.value);
         
@@ -104,6 +104,7 @@ if (cargoLevel > 10000 && fuelLevel < 10000) {
     cargoStatus.innerHTML = "Cargo mass low enough for launch";
 } 
     });
+    };
 
 
 
